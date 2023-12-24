@@ -1,4 +1,4 @@
-package com.fre.hotelmanagement;
+package com.Tesfalem.libraryManagementSystem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

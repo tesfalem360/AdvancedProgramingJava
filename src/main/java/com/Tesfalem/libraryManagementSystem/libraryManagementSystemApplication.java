@@ -1,13 +1,13 @@
-package com.fre.hotelmanagement;
+package com.Tesfalem.libraryManagementSystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HotelManagementApplication {
+public class libraryManagementSystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HotelManagementApplication.class, args);
+        SpringApplication.run(libraryManagementSystemApplication.class, args);
     }
 
 }

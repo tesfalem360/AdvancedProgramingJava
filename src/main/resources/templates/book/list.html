@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.altraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{master/masterlayout}">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+  <div>
+    <h1>List Of book</h1>
+  </div>
+  <table class="table table-hover" id="supplier-table">
+    <thead class="table-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">book Name</th>
+      <th scope="col">author</th>
+      <th scope="col">Actions</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book:${book}">
+      <th th:text="${book.bookId}"></th>
+      <td th:text="${book.name}"></td>
+      <td th:text="${book.author}"></td>
+      <td><a th:href="@{/book/delete/__${book.bookId}__}"  onclick="return confirm('Are you sure you want to delete the Record with its details?')" class="btn btn-outline-danger">Delete</a>
+        <a th:href="@{/book/edit/__${book.bookId}__}" class="btn btn-outline-warning">Edit</a></td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</th:block>
+
+<th:block layout:fragment="footer"></th:block>
+
+</body>
+</html>

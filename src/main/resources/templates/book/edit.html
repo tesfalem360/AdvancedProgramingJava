@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.altraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{master/masterlayout}">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+  <div>
+    <h1>Edit Books</h1>
+  </div>
+  <form th:action="@{/book/edit}" method="post" th:object="${book}">
+    <fieldset>
+
+      <input type="hidden" name="bookId" th:value="${book.bookId}">
+
+      <div class="form-group">
+        <label for="name"> book name</label>
+        <input type="text" class="form-control" id="name" name="name"
+               th:value="${book.name}" maxlength=25 required>
+      </div>
+
+      <div class="form-group">
+        <label for="author"> author </label>
+        <input type="text" class="form-control" id="author" name="author"
+               th:value="${book.author}" min=1 max=5 required>
+      </div>
+      <div>
+        <a th:href="@{/book/list}" class="btn btn-outline-success">Cancel</a>
+        <button type="submit" class="btn btn-outline-success">Update</button>
+      </div>
+    </fieldset>
+  </form>
+
+
+
+
+
+</th:block>
+
+<th:block layout:fragment="footer"></th:block>
+
+</body>
+</html>
